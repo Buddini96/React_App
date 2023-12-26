@@ -1,4 +1,5 @@
 import {Component} from "react";
+// @ts-ignore
 import spanish from "../../../images/products/spinach.webp";
 import {ModifyCart} from "../ModifyCart/ModifyCart";
 
@@ -9,7 +10,6 @@ interface ProductProps {
 interface ProductState {
     isActive: boolean
 }
-
 
 
 export class Product extends Component<ProductProps, ProductState> {
@@ -51,7 +51,6 @@ export class Product extends Component<ProductProps, ProductState> {
                                 <button className={"w-full mt p-[3px] text-[12px] bg-green-600 p-5 text-white hover:text-black"}
                                         onClick={this.AddToCartOnClick}>Add to Cart</button>
                         }
-
 
                     </div>
                 </div>

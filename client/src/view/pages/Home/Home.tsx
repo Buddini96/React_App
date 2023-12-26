@@ -1,6 +1,9 @@
 import {Component} from "react";
+// @ts-ignore
 import spanish from "../../../images/products/spinach.webp";
+// @ts-ignore
 import tomato from "../../../images/products/tomato.webp";
+// @ts-ignore
 import beans from "../../../images/products/beans.jpg";
 import {Product} from "../../common/Product/Product";
 

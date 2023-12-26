@@ -1,4 +1,5 @@
 import {Component} from "react";
+// @ts-ignore
 import logo from '../../../images/logo.png';
 import {Link} from "react-router-dom";
 
