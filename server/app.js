@@ -7,6 +7,7 @@ const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var productsRouter = require('./routes/products');
+var contactRouter = require('./routes/contact');
 
 var app = express();
 
@@ -32,6 +33,8 @@ app.use(cors());
 // Path of the Route
 app.use('/', indexRouter); // http://localhost:4000 (base url)
 app.use('/products', productsRouter); // http://localhost:4000/products
+app.use('/contact', contactRouter); // http://localhost:4000/contact (req ekk enne khmd kiyna eka define krna ek)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
