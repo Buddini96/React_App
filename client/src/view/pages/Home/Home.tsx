@@ -6,26 +6,42 @@ import tomato from "../../../images/products/tomato.webp";
 // @ts-ignore
 import beans from "../../../images/products/beans.jpg";
 import {Product} from "../../common/Product/Product";
+import axios from "axios";
+import {Simulate} from "react-dom/test-utils";
+import error = Simulate.error;
 
 export class Home extends Component {
+
+    private api : any;
     constructor(props: {} | Readonly<{}>) {
         super(props);
+        this.api = axios.create({baseURL: `http://localhost:4000`}); // our base url is http://localhost:4000
         this.state = {
             data:[],
         }
     }
     componentDidMount() {
-        this.fetchData();
+        this.fetchData()
+            .then(r => console.log("Data fetch completed" + r)); // Callback function
     }
 
     fetchData = async () => {
         try {
-            const response = await fetch('./product-data.json');
-            const jsonData = await response.json();
-            this.setState({data: jsonData})
+            // const response = await fetch('./product-data.json'); // Pause Execution
+            // const jsonData = await response.json();
 
-        }catch (error){
-            console.log("Error fetching data" , error)
+            // me uda comment krpu dekn wena de thami dn Axios use krla back end data tika set krna ek methnata
+
+            // data loading part
+            this.api.get('/products/all')
+                .then((res: { data: any }) => { // .then kiyna eka use kara ena result eka catch kragnn
+                    const jsonData = res.data; //me line ek = const jsonData = await response.json(); mekta
+                    this.setState({data: jsonData});
+                }).catch((error: any)=> {
+                console.error('Axios Error:', error)
+            });
+        } catch (error) {
+            console.log('Error fetching data: ', error)
         }
     }
 
