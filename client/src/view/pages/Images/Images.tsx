@@ -24,16 +24,11 @@ export class Images extends Component {
     }
     render() {
         // @ts-ignore
-        const {data} = this.state;
+
         return (
             <>
                 <h1 className={"text-center text-green-900 font-bold"}>This is Image Component</h1>
 
-                {
-                    data.map((product:any) => (
-                        <Product key = {product.id} data = {product}/>
-                    ))
-                }
             </>
 
 
