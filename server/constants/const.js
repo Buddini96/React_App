@@ -35,6 +35,8 @@ const productList = [
 //productList eka erenn thwa ewa module ekn eliyataexport karann ona nm ona nm
 
 const test = [];
+
+//module.exports = {productList, test};
 module.exports = [productList, test];
 
 
