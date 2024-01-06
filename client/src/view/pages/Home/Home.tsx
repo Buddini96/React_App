@@ -1,3 +1,5 @@
+
+
 import {Component} from "react";
 // @ts-ignore
 import spanish from "../../../images/products/spinach.webp";
