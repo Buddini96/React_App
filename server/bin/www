@@ -7,12 +7,16 @@
 var app = require('../app');
 var debug = require('debug')('server:server');
 var http = require('http');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '4000');
+var port = normalizePort(process.env.PORT || '4000'); //.env kiyla file ekk hadala eke port ekk define kroth ethin ywna port ek thmi methnin define wenne
 app.set('port', port);
 
 /**

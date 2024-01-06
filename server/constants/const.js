@@ -12,7 +12,7 @@ const productList = [
         "name" : "Tomatoes",
         "price" : "540",
         "currency" : "LKR",
-        "image" : "tomato.webp"
+        "image" : "Tomato.png"
     },
 
     {

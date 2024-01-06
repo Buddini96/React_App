@@ -5,6 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
 
+//db connection import
+const DBConnection = require('./db/DbConnection');
+
+DBConnection().then(r => console.log(r));
+
 var indexRouter = require('./routes/index');
 var productsRouter = require('./routes/products');
 var contactRouter = require('./routes/contact');
